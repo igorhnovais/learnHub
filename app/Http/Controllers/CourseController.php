@@ -14,7 +14,7 @@ class CourseController extends Controller
         if($search) {
 
             $courses = Course::where([
-                ['title', 'like', '%'.$search.'%']
+                ['title', 'ilike', '%'.$search.'%']
             ])->get();
 
         } else {
