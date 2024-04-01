@@ -29,14 +29,14 @@
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a href="/" class="nav-link">Eventos</a>
+                <a href="/" class="nav-link">Cursos</a>
               </li>
               <li class="nav-item">
-                <a href="/events/create" class="nav-link">Criar Eventos</a>
+                <a href="/courses/create" class="nav-link">Criar Cursos</a>
               </li>
               @auth
               <li class="nav-item">
-                <a href="/dashboard" class="nav-link">Meus eventos</a>
+                <a href="/dashboard" class="nav-link">Meus Cursos</a>
               </li>
               <li class="nav-item">
                 <form action="/logout" method="POST">
