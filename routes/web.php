@@ -20,6 +20,7 @@ Route::get('/', [CourseController::class, 'index']);
 Route::get('/courses/create', [CourseController::class, 'create'])->middleware('auth');
 Route::post('/courses', [CourseController::class, 'store']);
 Route::get('/courses/{id}', [CourseController::class, 'show']);
+Route::post('/courses/join/{id}', [CourseController::class, 'joinEvent'])->middleware('auth');
 
 
 

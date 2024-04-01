@@ -78,4 +78,14 @@ class CourseController extends Controller
 
         return view('courses.show', ['course' => $course, 'courseOwner' => $courseOwner, 'hasUserJoined' => $hasUserJoined]);
     }
+
+    public function joinEvent($id){
+        $user = auth()->user();
+
+        $user->coursesAsParticipant()->attach($id);
+
+        $course = Course::findOrFail($id);
+
+        return redirect('/')->with('msg', 'Sua presença está confirmada no evento ' . $course->title);
+    }
 }
