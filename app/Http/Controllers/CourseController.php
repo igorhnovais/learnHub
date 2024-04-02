@@ -88,4 +88,18 @@ class CourseController extends Controller
 
         return redirect('/')->with('msg', 'Sua presença está confirmada no evento ' . $course->title);
     }
+
+    public function dashboard() {
+
+        $user = auth()->user();
+
+        $courses = $user->courses;
+
+        $coursesAsParticipant = $user->coursesAsParticipant;
+
+        return view('courses.dashboard', 
+            ['courses' => $courses, 'coursesasparticipant' => $coursesAsParticipant]
+        );
+
+    }
 }
