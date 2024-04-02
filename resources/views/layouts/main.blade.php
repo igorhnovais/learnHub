@@ -19,44 +19,60 @@
     <body>
       <header>
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #d1ecf1;">
-        <div class="container-fluid">
-          <!-- Logotipo -->
-          <a href="/" class="navbar-brand mr-auto">
-            <h1>Lh</h1>
-          </a>
+  <div class="container-fluid">
+    <!-- Logotipo no início -->
+    <div>
+      <a href="/" class="navbar-brand">
+        <h1 style="text-shadow: 2px 2px 4px #ff7f00;">LearnHub</h1>
+      </a>
+    </div>
 
-          <!-- Lista de navegação -->
-          <div class="collapse navbar-collapse" id="navbar">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item">
-                <a href="/" class="nav-link">Cursos</a>
-              </li>
-              <li class="nav-item">
-                <a href="/courses/create" class="nav-link">Criar Cursos</a>
-              </li>
-              @auth
-              <li class="nav-item">
-                <a href="/dashboard" class="nav-link">Meus Cursos</a>
-              </li>
-              <li class="nav-item">
-                <form action="/logout" method="POST">
-                  @csrf
-                  <a href="/logout" class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
-                </form>
-              </li>
-              @endauth
-              @guest
-              <li class="nav-item">
-                <a href="/login" class="nav-link">Entrar</a>
-              </li>
-              <li class="nav-item">
-                <a href="/register" class="nav-link">Cadastrar</a>
-              </li>
-              @endguest
-            </ul>
-          </div>
+    <!-- Formulário centralizado -->
+    <div class="mx-auto">
+      <form action="/" method="GET" class="form-inline">
+        <div class="input-group">
+          <input type="text" id="search" name="search" class="form-control form-control-lg" placeholder="&#xf002; Procurar por curso" style="width: 400px;">
         </div>
-      </nav>
+      </form>
+    </div>
+
+
+
+    <!-- Lista de navegação no fim -->
+    <div class="nav-item">
+      <div class="collapse navbar-collapse nav-item" id="navbar">
+        <ul class="navbar-nav ml-auto nav-item">
+          <li class="nav-item">
+            <a href="/" class="nav-link">Cursos</a>
+          </li>
+          <li class="nav-item">
+            <a href="/courses/create" class="nav-link">Criar Cursos</a>
+          </li>
+          @auth
+          <li class="nav-item">
+            <a href="/dashboard" class="nav-link">Meus Cursos</a>
+          </li>
+          <li class="nav-item">
+            <form action="/logout" method="POST">
+              @csrf
+              <a href="/logout" class="nav-link" onclick="event.preventDefault(); this.closest('form').submit();">Sair</a>
+            </form>
+          </li>
+          @endauth
+          @guest
+          <li class="nav-item">
+            <a href="/login" class="nav-link">Entrar</a>
+          </li>
+          <li class="nav-item">
+            <a href="/register" class="nav-link">Cadastrar</a>
+          </li>
+          @endguest
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
       </header>
       <main>
         <div class="container-fluid mb-5">

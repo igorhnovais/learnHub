@@ -30,7 +30,7 @@
       </div>
       <div class="col-md-12" id="description-container">
         <h3>Sobre o curso:</h3>
-        <p class="event-description">{{ $course->description }}</p>
+        <p class="course-description">{{ $course->description }}</p>
       </div>
     </div>
   </div>
