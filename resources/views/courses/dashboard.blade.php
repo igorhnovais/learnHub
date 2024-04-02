@@ -37,7 +37,7 @@
         </tbody>
     </table>
     @else
-    <p>Você ainda não tem cursoss, <a href="/courses/create">criar curso</a></p>
+    <p>Você ainda não tem cursos, <a href="/courses/create">criar curso</a></p>
     @endif
 </div>
 <div class="col-md-10 offset-md-1 dashboard-title-container">
@@ -75,7 +75,7 @@
     </tbody>
 </table>
 @else
-<p>Você ainda não está participando de nenhum courseo, <a href="/">veja todos os courseos</a></p>
+<p>Você ainda não está participando de nenhum courseo, <a href="/">veja todos os cursos</a></p>
 @endif
 </div>
 @endsection

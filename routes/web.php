@@ -23,6 +23,8 @@ Route::get('/courses/{id}', [CourseController::class, 'show']);
 Route::post('/courses/join/{id}', [CourseController::class, 'joinEvent'])->middleware('auth');
 Route::delete('courses/leave/{id}', [CourseController::class, 'leaveCourse'])->middleware('auth');
 Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->middleware('auth');
+Route::get('/courses/edit/{id}', [CourseController::class, 'edit'])->middleware('auth');
+Route::put('/courses/update/{id}', [CourseController::class, 'update'])->middleware('auth');
 
 Route::get('/dashboard', [CourseController::class, 'dashboard'])->middleware('auth');
 

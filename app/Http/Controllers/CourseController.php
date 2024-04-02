@@ -79,7 +79,7 @@ class CourseController extends Controller
         return view('courses.show', ['course' => $course, 'courseOwner' => $courseOwner, 'hasUserJoined' => $hasUserJoined]);
     }
 
-    public function joinEvent($id){
+    public function joincourse($id){
         $user = auth()->user();
 
         $user->coursesAsParticipant()->attach($id);
@@ -120,6 +120,45 @@ class CourseController extends Controller
         Course::findOrFail($id)->delete();
 
         return redirect('/dashboard')->with('msg', 'Curso excluído com sucesso!');
+
+    }
+
+    public function edit($id) {
+
+        $user = auth()->user();
+
+        $course = Course::findOrFail($id);
+
+        if($user->id != $course->user_id) {
+            return redirect('/dashboard');
+        }
+
+        return view('courses.edit', ['course' => $course]);
+
+    }
+
+    public function update(Request $request) {
+
+        $data = $request->all();
+
+        // Image Upload
+        if($request->hasFile('image') && $request->file('image')->isValid()) {
+
+            $requestImage = $request->image;
+
+            $extension = $requestImage->extension();
+
+            $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+
+            $requestImage->move(public_path('img/events'), $imageName);
+
+            $data['image'] = $imageName;
+
+        }
+
+        Course::findOrFail($request->id)->update($data);
+
+        return redirect('/dashboard')->with('msg', 'Curso editado com sucesso!');
 
     }
 }
