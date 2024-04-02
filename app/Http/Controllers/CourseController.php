@@ -111,7 +111,15 @@ class CourseController extends Controller
 
         $course = Course::findOrFail($id);
 
-        return redirect('/dashboard')->with('msg', 'Você saiu com sucesso do evento: ' . $course->title);
+        return redirect('/dashboard')->with('msg', 'Você saiu com sucesso do curso: ' . $course->title);
+
+    }
+
+    public function destroy($id) {
+
+        Course::findOrFail($id)->delete();
+
+        return redirect('/dashboard')->with('msg', 'Curso excluído com sucesso!');
 
     }
 }
