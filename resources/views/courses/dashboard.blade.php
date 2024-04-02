@@ -37,7 +37,7 @@
         </tbody>
     </table>
     @else
-    <p>Você ainda não tem courseos, <a href="/courses/create">criar courseo</a></p>
+    <p>Você ainda não tem cursoss, <a href="/courses/create">criar curso</a></p>
     @endif
 </div>
 <div class="col-md-10 offset-md-1 dashboard-title-container">
@@ -66,7 +66,7 @@
                         @method("DELETE")
                         <button type="submit" class="btn btn-danger delete-btn">
                             <ion-icon name="trash-outline"></ion-icon> 
-                            Sair do courseo
+                            Sair do curso
                         </button>
                     </form>
                 </td>

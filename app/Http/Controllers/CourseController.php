@@ -102,4 +102,16 @@ class CourseController extends Controller
         );
 
     }
+
+    public function leaveCourse($id) {
+
+        $user = auth()->user();
+
+        $user->coursesAsParticipant()->detach($id);
+
+        $course = Course::findOrFail($id);
+
+        return redirect('/dashboard')->with('msg', 'Você saiu com sucesso do evento: ' . $course->title);
+
+    }
 }

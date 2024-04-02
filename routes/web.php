@@ -21,8 +21,10 @@ Route::get('/courses/create', [CourseController::class, 'create'])->middleware('
 Route::post('/courses', [CourseController::class, 'store']);
 Route::get('/courses/{id}', [CourseController::class, 'show']);
 Route::post('/courses/join/{id}', [CourseController::class, 'joinEvent'])->middleware('auth');
+Route::delete('courses/leave/{id}', [CourseController::class, 'leaveCourse'])->middleware('auth');
 
 Route::get('/dashboard', [CourseController::class, 'dashboard'])->middleware('auth');
+
 
 
 
