@@ -5,7 +5,7 @@
 @section('content')
 
 <div id="event-create-container" class="col-md-6 offset-md-3">
-  <h1>Crie o seu Curso</h1>
+  <h1 class="mt-3">Crie o seu Curso</h1>
   <form action="/courses" method="POST" enctype="multipart/form-data">
     @csrf
     <div class="form-group">
@@ -22,7 +22,7 @@
     </div>
     <div class="form-group">
       <label for="title">Descrição:</label>
-      <textarea name="description" id="description" class="form-control" placeholder="O que vai acontecer no Curso?"></textarea>
+      <textarea name="description" id="description" class="form-control" placeholder="Descreva o que terá no Curso"></textarea>
     </div>
     <input type="submit" class="btn btn-primary" value="Criar Curso">
   </form>
