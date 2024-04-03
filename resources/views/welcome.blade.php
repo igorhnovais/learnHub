@@ -13,7 +13,7 @@
     <div id="cards-container" class="row mb-5 justify-content-center">
         @foreach($courses as $course)
         <div class="card col-md-3 mb-4 ml-4 shadow">
-            <img src="{{ $course->image }}" alt="{{ $course->title }}">
+            <img src="/img/courses/{{ $course->image }}" alt="{{ $course->title }}">
             <div class="card-body">
                 <p class="card-date">{{ date('d/m/Y', strtotime($course->date)) }}</p>
                 <h5 class="card-title">{{ $course->title }}</h5>

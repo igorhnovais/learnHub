@@ -7,7 +7,7 @@
   <div class="col-md-10 offset-md-1">
     <div class="row">
       <div id="image-container" class="col-md-6">
-        <img src="{{ $course->image }}" class="img-fluid" alt="{{ $course->title }}">
+        <img src="/img/courses/{{ $course->image }}" class="img-fluid" alt="{{ $course->title }}">
       </div>
       <div id="info-container" class="col-md-6">
         <h1>{{ $course->title }}</h1>
@@ -25,7 +25,7 @@
             </a>
           </form>
         @else
-          <p class="already-joined-msg">Você já está participando deste evento!</p>
+          <p class="already-joined-msg">Você já é um aluno!</p>
         @endif
       </div>
       <div class="col-md-12" id="description-container">
